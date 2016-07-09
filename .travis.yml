@@ -1,12 +1,18 @@
-language: php
+language: python
+python:
+ - "2.7"
 
-php:
-    - "5.5"
-    - "5.4"
-    - "5.3"
-    
+branches:
+  only:
+    - master
+
+# install Java 8 as required by vnu.jar
+before_install:
+ - sudo apt-get update
+ - sudo apt-get install oracle-java8-installer
+ - sudo update-java-alternatives -s java-8-oracle
+
 install:
  - pip install phpunit
-    
 
 script: phpunit --root .
