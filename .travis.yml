@@ -13,6 +13,6 @@ before_install:
  - sudo update-java-alternatives -s java-8-oracle
 
 install:
- - pip install phpunit
+ - pip install html5validator
 
-script: phpunit --root .
+script: html5validator --root .
